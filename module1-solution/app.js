@@ -16,12 +16,14 @@ function LunchController($scope) {
 
   $scope.userData = "";
   $scope.message = "";
+  $scope.messageCssClass = "";
 
   $scope.checkData = function () {
   	var listArray = [];
 
   	if (!$scope.userData.length) {
   		$scope.message = messages.enterData;
+  		$scope.messageCssClass = "alert-danger";
   		return;
   	}
 
@@ -29,13 +31,16 @@ function LunchController($scope) {
 	listArray = removeEmptyItemsFromArray(listArray);
 	if (listArray.length > 3) {
 		$scope.message = messages.tooMuch;
+		$scope.messageCssClass = "alert-warning";
 	} else {
 		$scope.message = messages.enjoy;
+		$scope.messageCssClass = "alert-success";
 	}
   };
 
   $scope.hideMessage = function () {
   	$scope.message = "";
+  	$scope.messageCssClass = "";
   };
 
   function removeEmptyItemsFromArray(arrayToProcess) {

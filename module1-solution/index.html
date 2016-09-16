@@ -10,7 +10,7 @@
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
   </head>
-<body>
+<body ng-cloak>
    <div class="container" ng-controller='LunchController'>
      <h1>Lunch Checker</h1>
 
@@ -24,7 +24,7 @@
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkData()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div class="alert {{ messageCssClass }}">
            <!-- Your message can go here. -->
            {{ message }}
          </div>
