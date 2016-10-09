@@ -29,28 +29,28 @@ function FoundItemsDirectiveController() { }
 
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
-  var menuSearch = this;
-  menuSearch.searchTerm = "";
-  menuSearch.found      = [];
-  menuSearch.nothingFoundMsg = "";
+  var menu_search = this;
+  menu_search.searchTerm = "";
+  menu_search.found      = [];
+  menu_search.nothingFoundMsg = "";
 
 
-  menuSearch.findItems = function () {
+  menu_search.findItems = function () {
     
 
-    if(menuSearch.searchTerm === "") {
-        menuSearch.found = []; // empty in case it´s not
-        menuSearch.nothingFoundMsg = "Nothing found";
+    if(menu_search.searchTerm === "") {
+        menu_search.found = []; // empty in case it´s not
+        menu_search.nothingFoundMsg = "Nothing found";
     } else {
-      var promise = MenuSearchService.getMatchedMenuItems(menuSearch.searchTerm);
+      var promise = MenuSearchService.getMatchedMenuItems(menu_search.searchTerm);
 
       promise.then(function (response) {
-        menuSearch.found = response;
+        menu_search.found = response;
 
-        if(menuSearch.found.length > 0) {
-          menuSearch.nothingFoundMsg = "";
+        if(menu_search.found.length > 0) {
+          menu_search.nothingFoundMsg = "";
         } else {
-          menuSearch.nothingFoundMsg = "Nothing found";
+          menu_search.nothingFoundMsg = "Nothing found";
         }
 
 
