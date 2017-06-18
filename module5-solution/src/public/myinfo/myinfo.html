@@ -1,0 +1,36 @@
+<div class="container" ng-controller="MyinfoController as myinfoCtrl">
+
+    <div id="info" ng-hide="myinfoCtrl.profile.firstname">
+        Not Signed Up Yet.
+        <a ui-sref ="public.signup">
+            <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs">Sign up Now!
+        </a>
+    </div>
+
+    <div id="info" ng-show="myinfoCtrl.profile.firstname">
+        <div class="menu-item-tile col-md-6">
+            <div class="menu-item-description col-sm-7">
+                <h3 class="menu-item-title">{{myinfoCtrl.profile.firstname}}</h3>
+                <h3 class="menu-item-details">{{myinfoCtrl.profile.lastname}}</h3>
+                <h3 class="menu-item-details">{{myinfoCtrl.profile.email}}</h3>
+                <h3 class="menu-item-details">{{myinfoCtrl.profile.phone}}</h3>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                        <div>{{myinfoCtrl.profile.shortname}}</div>
+                        <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.profile.shortname}}.jpg" alt="{{myinfoCtrl.profile.shortname}}">
+                    </div>
+                </div>
+            </div>
+            <div class="menu-item-description col-sm-7">
+                <h3 class="menu-item-title">{{myinfoCtrl.profile.itemname}}</h3>
+                <p class="menu-item-details">{{myinfoCtrl.profile.description}}</p>
+            </div>
+        </div>
+        <hr class="visible-xs">
+    </div>
+</div>
