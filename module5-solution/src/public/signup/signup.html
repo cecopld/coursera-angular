@@ -1,14 +1,8 @@
-
-
-
 	<div class="container" ng-controller="SignupController as signupCtrl">
-
-
 		<h1>New User Registration</h1>
-
 		<form class="form-horizontal" name="regForm" novalidate>
-
 			<div class="form-group">
+			<div class="row">
 				<div class="col-md-2">
 					<label>First Name</label>
 				</div>
@@ -19,8 +13,7 @@
 					</div>
 				</div>
 			</div>
-
-      <div class="form-group">
+      		<div class="row">
 				<div class="col-md-2">
 					<label>Last Name</label>
 				</div>
@@ -32,7 +25,7 @@
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="row">
 				<div class="col-md-2">
 					<label>Phone Number</label>
 				</div>
@@ -43,7 +36,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="row">
 				<div class="col-md-2">
 					<label>Email Address</label>
 				</div>
@@ -55,7 +48,7 @@
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="row">
 				<div class="col-md-2">
 					<label>Short Name</label>
 				</div>
@@ -64,22 +57,19 @@
 				 <div class="alert alert-danger" ng-hide="signupCtrl.validShortName">
 						No such menu number exists
 				</div>
-
 			</div>
 
-			<div class="form-group">
+			<div class="row">
 				<div class="col-md-offset-2 col-md-5">
-          <button
-            ng-disabled="regForm.$invalid"
-            ng-click="signupCtrl.submit()">Submit</button>
-
-
+          			<button
+            			ng-disabled="regForm.$invalid"
+            			ng-click="signupCtrl.submit()">Submit</button>
 					<a href="javascript:void(0)" class="btn btn-default" ng-click = "signupCtrl.reset()">Reset</a>
 				</div>
 			</div>
+			</div>
 		</form>
 		<div id="info" ng-if="signupCtrl.completed">
-		Your information has been saved {{signupCtrl.user.firstname}}&nbsp;{{signupCtrl.user.lastname}}
+			Your information has been saved {{signupCtrl.user.firstname}}&nbsp;{{signupCtrl.user.lastname}}
 		</div>
-
 	</div>
